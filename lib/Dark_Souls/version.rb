@@ -1,3 +1,3 @@
-module FirstProject
+module DarkSouls
   VERSION = "0.1.0"
 end
