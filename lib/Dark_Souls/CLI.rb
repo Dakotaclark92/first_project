@@ -17,8 +17,23 @@ Class DarkSouls::CLI
     when "Wanderer"
       puts "you have chosen Wanderer..."
     when "Thief"
+      puts "you have chosen Thief..."
+    when "Bandit"
       puts "you have chosen Bandit..."
-    
+    when "Hunter"
+      puts "you have chosen Hunter..."
+    when "Sorcerer"
+      puts "you have chosen Sorcerer..."
+    when "Pyromancer"
+      puts "you have chosen Pyromancer..."
+    when "Cleric"
+      puts "you have chosen Cleric..."
+    when "Deprived"
+      puts "you have chosen Deprived..."
+    else break
+  end
+  
+  
   end
   
   
