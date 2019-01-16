@@ -10,6 +10,7 @@ Class DarkSouls::CLI
   puts ""
   puts "Dark Souls classes are..."
   puts ""
+  @classes
   puts <<-DOC.gsub /^\s*/,''
    1. Warrior
    2. Knight
