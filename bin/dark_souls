@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-reqire './lib/dark_souls'
+require './lib/dark_souls'
 
 DarkSouls::CLI.new.call

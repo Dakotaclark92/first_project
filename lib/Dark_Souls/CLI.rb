@@ -65,8 +65,10 @@ Class DarkSouls::CLI
   end
 
 
- def goodbye
-   puts "YOU DIED"
- end
+  def goodbye
+    puts "YOU DIED"
+  end
+  
+end
 
 
