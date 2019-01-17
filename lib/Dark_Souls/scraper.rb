@@ -13,7 +13,7 @@ class Scraper
     self.get_classes.each do |post|
       character = Class.new
       character.name = post.css("a").text
-      character.starting_equipment = post.css("li")
+      character.starting_equipment = post.css("ul")
       character.description = post.css("p")
     end
     
