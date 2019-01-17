@@ -6,24 +6,13 @@ Class DarkSouls::CLI
     start
   end
 
- def list_classes
+  def list_classes
   puts ""
   puts "Dark Souls classes are..."
   puts ""
-  @classes
-  puts <<-DOC.gsub /^\s*/,''
-   1. Warrior
-   2. Knight
-   3. Wanderer
-   4. Thief
-   5. Bandit
-   6. Hunter
-   7. Sorcerer
-   8. Pyromancer
-   9. Cleric
-   10. Deprived
-  DOC
- end
+  @classes = DarkSouls::Classes.all
+end
+  
 
   
   def start
