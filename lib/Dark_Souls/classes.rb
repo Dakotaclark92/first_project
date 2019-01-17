@@ -1,4 +1,4 @@
-class Darksouls::Classes
+class DarkSouls::Classes
 
   attr_accessor :name, :description, :starting_equipment
 
@@ -17,52 +17,52 @@ class Darksouls::Classes
     DOC
     
     class_1 = self.new
-    class_1.name = Warrior
+    class_1.name = "Warrior"
     class_1.description = "info here"
     class_1.starting_equipment = "info here"
     
     class_2 = self.new
-    class_2.name = Knight
+    class_2.name = "Knight"
     class_2.description = "info here"
     class_2.starting_equipment = "info here"
     
     class_3 = self.new
-    class_3.name = Wanderer
+    class_3.name = "Wanderer"
     class_3.description = "info here"
     class_3.starting_equipment ="info here"
     
     class_4 = self.new
-    class_4.name = Thief
+    class_4.name = "Thief"
     class_4.description = "info here"
     class_4.starting_equipment ="info here"
     
     class_5 = self.new
-    class_5.name = Bandit
+    class_5.name = "Bandit"
     class_5.description = "info here"
     class_5.starting_equipment ="info here"
     
     class_6 = self.new
-    class_6.name = Hunter
+    class_6.name = "Hunter"
     class_6.description = "info here"
     class_6.starting_equipment ="info here"
     
     class_7 = self.new
-    class_7.name = Sorcerer
+    class_7.name = "Sorcerer"
     class_7.description = "info here"
     class_7.starting_equipment = "info here"
     
     class_8 = self.new
-    class_8.name = Pyromancer
+    class_8.name = "Pyromancer"
     class_8.description = "info here"
     class_8.starting_equipment ="info here"
     
     class_9 = self.new
-    class_9.name = Cleric
+    class_9.name = "Cleric"
     class_9.description = "info here"
     class_9.starting_equipment ="info here"
     
     class_10 = self.new
-    class_10.name = Deprived
+    class_10.name = "Deprived"
     class_10.description = "info here"
     class_10.starting_equipment ="info here"
 

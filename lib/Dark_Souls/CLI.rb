@@ -1,4 +1,4 @@
-Class DarkSouls::CLI
+class DarkSouls::CLI
 
   def call
    puts "welcome to Dark Souls"
@@ -7,51 +7,52 @@ Class DarkSouls::CLI
   end
 
   def list_classes
-  puts ""
-  puts "Dark Souls classes are..."
-  puts ""
-  @classes = DarkSouls::Classes.all
-end
+    puts ""
+    puts "Dark Souls classes are..."
+    puts ""
+    @classes = DarkSouls::Classes.all
+  end
   
 
   
   def start
-   input = nil
-   while input != "exit"
-    puts ""
-     puts "choose your class... or type list to see choises again"
-     puts ""
-     input = gets.strip
-     case input
-     when "exit"
-     goodbye
-     when "1"
+    input = nil
+    while input != "exit"
+      puts ""
+      puts "choose your class... or type list to see choises again"
+      puts ""
+      input = gets.strip
+      case input
+      when "exit"
+        goodbye
+      when "1"
        puts "you have chosen Warrior..."
-     when "2"
+      when "2"
        puts "you have chosen Knight..."
-     when "3"
+      when "3"
        puts "you have chosen Wanderer..."
-     when "4"
+      when "4"
        puts "you have chosen Thief..."
-     when "5"
+      when "5"
        puts "you have chosen Bandit..."
-     when "6"
+      when "6"
        puts "you have chosen Hunter..."
-     when "7"
+      when "7"
        puts "you have chosen Sorcerer..."
-     when "8"
+      when "8"
        puts "you have chosen Pyromancer..."
-     when "9"
+      when "9"
        puts "you have chosen Cleric..."
-     when "10"
+      when "10"
        puts "you have chosen Deprived..."
-     when "list"
+      when "list"
        list_classes
-     else
+      else
        puts "invalid choise please select from class list... if you need the list again please type in list."
-     end
+      end
     end
   end
+  
 
 
   def goodbye
