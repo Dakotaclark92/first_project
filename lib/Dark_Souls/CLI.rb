@@ -1,8 +1,9 @@
 class DarkSouls::CLI
 
   def call
-   puts "welcome to Dark Souls"
-   list_classes
+    puts ""
+    puts "Welcome to Dark Souls"
+    list_classes
     start
   end
 
@@ -56,7 +57,9 @@ class DarkSouls::CLI
 
 
   def goodbye
+    puts ""
     puts "YOU DIED"
+    puts ""
   end
   
 end
