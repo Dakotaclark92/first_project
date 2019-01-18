@@ -1,23 +1,31 @@
+
 require 'nokogiri'
 require 'open-uri'
-require 'pry'
 
+class DarkSouls::Scraper
 
-class Scraper
   
   def get_page
     
-   doc = Nokogiri::HTML(open("http://darksouls.wikia.com/wiki/Classes_(Dark_Souls)"))
+   Nokogiri::HTML(open("http://darksouls.wikia.com/wiki/Classes_(Dark_Souls)"))
    
-      binding.pry
-   
+    
+    
   end
   
-#name = doc.css("h3 .mw-headline").map{|n|n.text}
-#des = doc.css(".floatright + p").map{|n|n.text}[0...10]
-#starting equ = doc.css("p + ul").map{|n|n.text}[0...10]
+  def get_character_name
+    self.get_page.css("h3 .mw-headline").map{|n|n.text}[0...10]
+  end
   
-  (0..9).each{|n|puts n}
+  def get_character_description
+    self.get_page.css(".floatright + p").map{|n|n.text}[0...10]
+  end
 end
 
-Scraper.new.get_page
+
+ # name = doc.css("h3 .mw-headline").map{|n|n.text}
+  # des = doc.css(".floatright + p").map{|n|n.text}[0...10]
+  # starting equ = doc.css("p + ul").map{|n|n.text}[0...10]
+  
+  
+  # (0..9).each{|n|puts n}

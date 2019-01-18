@@ -11,7 +11,10 @@ class DarkSouls::CLI
     puts ""
     puts "Dark Souls classes are..."
     puts ""
-    @classes = DarkSouls::Classes.all
+    @character = DarkSouls::Character.all
+    @character.each.with_index(1) do |character, n|
+      puts "#{n}, #{character.name} - #{character.description} - #{character.starting_equipment}"
+    end
   end
   
 
@@ -23,31 +26,10 @@ class DarkSouls::CLI
       puts "choose your class... or type list to see choises again"
       puts ""
       input = gets.strip
-      case input
-      when "exit"
-        goodbye
-      when "1"
-       puts "you have chosen Warrior..."
-      when "2"
-       puts "you have chosen Knight..."
-      when "3"
-       puts "you have chosen Wanderer..."
-      when "4"
-       puts "you have chosen Thief..."
-      when "5"
-       puts "you have chosen Bandit..."
-      when "6"
-       puts "you have chosen Hunter..."
-      when "7"
-       puts "you have chosen Sorcerer..."
-      when "8"
-       puts "you have chosen Pyromancer..."
-      when "9"
-       puts "you have chosen Cleric..."
-      when "10"
-       puts "you have chosen Deprived..."
-      when "list"
-       list_classes
+      if input.to_i > 0
+        puts @classes[input.to_i-1]
+      elsif input == "list"
+        list_classes
       else
        puts "invalid choise please select from class list... if you need the list again please type in list."
       end
@@ -63,5 +45,3 @@ class DarkSouls::CLI
   end
   
 end
-
-
