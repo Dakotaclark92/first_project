@@ -30,6 +30,8 @@ class DarkSouls::CLI
         puts @classes[input.to_i-1]
       elsif input == "list"
         list_classes
+      elsif input == "exit"
+        goodbye
       else
        puts "invalid choise please select from class list... if you need the list again please type in list."
       end
