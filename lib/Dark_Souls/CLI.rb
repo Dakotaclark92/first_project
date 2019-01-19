@@ -11,7 +11,7 @@ class DarkSouls::CLI
     puts ""
     puts "Dark Souls classes are..."
     puts ""
-    @character = DarkSouls::Character.character_name
+    puts @character = DarkSouls::Character.character_name
    # @character.each.with_index(1) do |character, n|
    #   puts "#{n}, #{character.name} - #{character.description}"
    # end

@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 class DarkSouls::Character
 
   attr_accessor :name, :description, :starting_equipment
