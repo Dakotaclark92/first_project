@@ -15,14 +15,25 @@ class DarkSouls::Character
   end
   
   def self.scrape
+    Nokogiri::HTML(open("http://darksouls.wikia.com/wiki/Classes_(Dark_Souls)"))
+  end
+  
+  def self.character_name
     
-    doc = Nokogiri::HTML(open("http://darksouls.wikia.com/wiki/Classes_(Dark_Souls)"))
+    self.scrape.css("h3 .mw-headline").map{|n|n.text}
     
-    character = self.new
-    character.name =  doc.search("h3 .mw-headline").map{|n|n.text}[0...10]
-    character.description = doc.search(".floatright + p").map{|n|n.text}[0...10]
-    character.starting_equipment = doc.search("p + ul").map{|n|n.text}[0...10]
-    character
+  end
+  
+  def self.character_description
+    
+    self.scrape.css(".floatright + p").map{|n|n.text}[0...10]
+    
+  end
+  
+  def self.character_starting_equipment
+    
+    self.scrape.css("p + ul").map{|n|n.text}[0...10]
+    
   end
     
    # character_1 = self.new
