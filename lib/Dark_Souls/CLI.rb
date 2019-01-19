@@ -12,12 +12,22 @@ class DarkSouls::CLI
   def list_classes
     puts ""
     puts "Dark Souls classes are..."
-    puts ""
-    puts @character = DarkSouls::Character.character_name
+    puts "
+    1. Warrior
+    2. Knight
+    3. Wanderer
+    4. Thief
+    5. Bandit
+    6. Hunter
+    7. Sorcerer
+    8. Pyromancer
+    9. Cleric
+    10. Deprived"
+  end
+    
    # @character.each.with_index(1) do |character, n|
    #   puts "#{n}, #{character.name} - #{character.description}"
    # end
-  end
   
 
   
@@ -25,11 +35,11 @@ class DarkSouls::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "choose your class by typing in the number... type list to see choises again or type exit to leave"
+      puts "choose your class by typing in the number... type (list) to see choises again or type (exit) to leave"
       puts ""
       input = gets.strip
       if input.to_i > 0
-        puts @character[input.to_i-1]
+        puts DarkSouls::Character.character_name[input.to_i-1]
         puts "|"
         puts DarkSouls::Character.character_description[input.to_i-1]
         puts "|"
