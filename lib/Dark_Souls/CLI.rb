@@ -3,6 +3,8 @@ class DarkSouls::CLI
   def call
     puts ""
     puts "Welcome to Dark Souls"
+    puts ""
+    puts "Choose your character"
     list_classes
     start
   end
@@ -23,19 +25,20 @@ class DarkSouls::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "choose your class... or type list to see choises again"
+      puts "choose your class by typing in the number... type list to see choises again or type exit to leave"
       puts ""
       input = gets.strip
       if input.to_i > 0
         puts @character[input.to_i-1]
+        puts "|"
+        puts DarkSouls::Character.character_description[input.to_i-1]
+        puts "|"
+        puts "The starting equipment of your class is:"
+        puts DarkSouls::Character.character_starting_equipment[input.to_i-1]
       elsif input == "list"
         list_classes
       elsif input == "exit"
         goodbye
-      elsif input == "description"
-        description
-      elsif input == "starting_equipment"
-        starting_equipment
       else
        puts "invalid choise please select from class list... if you need the list again please type in list."
       end
