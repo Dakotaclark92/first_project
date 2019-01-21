@@ -3,8 +3,6 @@ require 'open-uri'
 
 class DarkSouls::Character
 
-  attr_accessor :name, :description, :starting_equipment
-
   def self.all
     self.scrape_character
   end

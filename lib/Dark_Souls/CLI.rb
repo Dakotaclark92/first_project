@@ -35,40 +35,42 @@ class DarkSouls::CLI
     input = nil
     while input != "exit"
       puts ""
-      puts "choose your class by typing in the number... type (list) to see choises again or type (exit) to leave"
+      puts "choose your class by typing in the number... type (list) to see choises again or type (exit) to leave."
       puts ""
       input = gets.strip
-      if input.to_i > 0
+      if input.to_i > 10
+        puts "No class assined to number please refer to list for class numbers... type (list) to see list, or (exit) to leave."
+      elsif input.to_i > 0
         puts DarkSouls::Character.character_name[input.to_i-1]
         puts "|"
         puts DarkSouls::Character.character_description[input.to_i-1]
         puts "|"
         puts "The starting equipment of your class is:"
         puts DarkSouls::Character.character_starting_equipment[input.to_i-1]
+      elsif input == "description"
+        description
+      elsif input == "starting equipment"
+        starting_equipment
       elsif input == "list"
         list_classes
       elsif input == "exit"
         goodbye
       else
-       puts "invalid choise please select from class list... if you need the list again please type in list."
+       puts "invalid choise please select from class list... if you need the list again please type in (list), or (exit) to leave."
       end
     end
   end
   
   def description
-    puts ""
-     @character = DarkSouls::Character.character_description
-    puts ""
+    input = gets.strip
+    puts DarkSouls::Character.character_description[input.to_i-1]
   end
   
   def starting_equipment
-    puts ""
-     @character = DarkSouls::Character.character_starting_equipment
-    puts ""
+    input = gets.strip
+    puts DarkSouls::Character.character_starting_equipment[input.to_i-1]
   end
   
-
-
   def goodbye
     puts ""
     puts "YOU DIED"
