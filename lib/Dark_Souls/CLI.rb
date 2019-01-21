@@ -40,6 +40,8 @@ class DarkSouls::CLI
       input = gets.strip
       if input.to_i > 10
         puts "No class assined to number please refer to list for class numbers... type (list) to see list, or (exit) to leave."
+      elsif input.to_i < 0
+        puts "No class assined to number please refer to list for class numbers... type (list) to see list, or (exit) to leave."
       elsif input.to_i > 0
         puts DarkSouls::Character.character_name[input.to_i-1]
         puts "|"
