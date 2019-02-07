@@ -50,9 +50,9 @@ class DarkSouls::CLI
         puts "The starting equipment of your class is:"
         puts DarkSouls::Character.character_starting_equipment[input.to_i-1]
       elsif input == "description"
-        description
+        puts description
       elsif input == "starting equipment"
-        starting_equipment
+        puts starting_equipment
       elsif input == "list"
         list_classes
       elsif input == "exit"

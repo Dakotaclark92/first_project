@@ -16,7 +16,7 @@ class DarkSouls::Character
   end
   
   def self.scrape
-    Nokogiri::HTML(open("http://darksouls.wikia.com/wiki/Classes_(Dark_Souls)"))
+    Nokogiri::HTML(open("https://darksouls.wikia.com/wiki/Classes_(Dark_Souls)"))
   end
   
   def self.character_name
