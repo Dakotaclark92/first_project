@@ -24,6 +24,8 @@ class DarkSouls::CLI
     9. Cleric
     10. Deprived"
   end
+
+
     
    # @character.each.with_index(1) do |character, n|
    #   puts "#{n}, #{character.name} - #{character.description}"
@@ -79,4 +81,29 @@ class DarkSouls::CLI
     puts ""
   end
   
+  BASE_PATH = "https://learn-co-curriculum.github.io/character-scraper-test-page/"
+  
+  def run
+    make_characters
+    add_attributes_to_characters
+    display_characters
+  end
+
+  def make_characters
+    characters_array = Scraper.scrape_index_page(BASE_PATH + 'index.html')
+    character.create_from_collection(characters_array)
+  end
+
+  def add_attributes_to_characters
+    character.all.each do |character|
+      attributes = Scraper.scrape_profile_page(BASE_PATH + character.profile_url)
+      character.add_character_attributes(attributes)
+    end
+  end
+
+  def display_characters
+    character.all.each do |character|
+      puts "#{character.name.upcase}"
+    end
+  end
 end
